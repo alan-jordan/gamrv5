@@ -9,21 +9,34 @@
     "dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node server/index",
     "watch": "nodemon -e js,jsx -x npm test",
-    "knex": "knex"
+    "knex": "knex",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
-  "ava": {
-    "require": "babel-register",
-    "babel": "inherit"
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "node_modules/",
+      "migrations/",
+      "seeds/"
+    ]
   },
   "babel": {
-    "presets": ["es2015", "react", "stage-0"]
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
   },
   "author": "EDA",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.19.1",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "enzyme": "^2.8.2",
+    "jest": "^22.4.3",
     "nodemon": "^1.11.0",
+    "react-test-renderer": "^15.6.2",
     "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
   },

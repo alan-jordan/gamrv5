@@ -1,7 +1,7 @@
-var jwt = require("jsonwebtoken");
-var { getUserByName } = require("../db/users");
-var verifyJwt = require("express-jwt");
-var { compare } = require("./hash");
+const jwt = require("jsonwebtoken");
+const { getUserByName } = require("../db/users");
+const verifyJwt = require("express-jwt");
+const { compare } = require("./hash");
 
 function issue(req, res) {
   getUserByName(req.body.user_name, req.app.get("db")).then(user => {
