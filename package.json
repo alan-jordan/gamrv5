@@ -1,7 +1,7 @@
 {
   "name": "gamr",
   "version": "0.1.1",
-  "description": "A site",
+  "description": "A test site",
   "repository": "https://github.com/alan-jordan/gamrv5",
   "main": "server/index.js",
   "scripts": {
@@ -14,18 +14,10 @@
     "coverage": "jest --coverage"
   },
   "jest": {
-    "coveragePathIgnorePatterns": [
-      "node_modules/",
-      "migrations/",
-      "seeds/"
-    ]
+    "coveragePathIgnorePatterns": ["node_modules/", "migrations/", "seeds/"]
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
+    "presets": ["es2015", "react", "stage-0"]
   },
   "author": "EDA",
   "license": "ISC",

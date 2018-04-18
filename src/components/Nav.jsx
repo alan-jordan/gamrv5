@@ -1,26 +1,23 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {logoutUser} from '../actions/logout'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Nav (props) {
+function Nav(props) {
+  const { handleLogOut, auth } = props;
   return (
     <div className="Nav">
-      <Link to="/">Home</Link>{" | "}
-      {props.auth.isAuthenticated
-        ? <button onClick={() => props.dispatch(logoutUser())}>Logout</button>
-        : <div>
-          <Link to="/login">Login</Link>{" | "}
+      <Link to="/">Home</Link>
+      {" | "}
+      {auth.isAuthenticated ? (
+        <button onClick={() => handleLogOut}>Logout</button>
+      ) : (
+        <div>
+          <Link to="/login">Login</Link>
+          {" | "}
           <Link to="/register">Register</Link>
         </div>
-      }
-
+      )}
     </div>
-  )
+  );
 }
 
-const mapStateToProps = ({auth}) => {
-  return {auth}
-}
-
-export default connect(mapStateToProps)(Nav)
+export default Nav;
